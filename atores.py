@@ -9,7 +9,7 @@ ATIVO = 'Ativo'
 GRAVIDADE = 10  # m/s^2
 
 
-class Ator():
+class Ator:
     """
     Classe que representa um ator. Ele representa um ponto cartesiano na tela.
     """
@@ -53,7 +53,6 @@ class Ator():
         :return:
         """
         pass
-
 
 
 class Obstaculo(Ator):
@@ -118,7 +117,6 @@ class Passaro(Ator):
         :return: posição x, y
         """
         return 1, 1
-
 
     def lancar(self, angulo, tempo_de_lancamento):
         """
