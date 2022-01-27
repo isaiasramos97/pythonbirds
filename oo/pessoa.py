@@ -10,6 +10,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod   # decorator: elementos que começam com arroba, e em geral ficam em cima de funções e metodos
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
 
 if __name__ == '__main__':
     renzo = Pessoa(nome='Renzo')
@@ -24,8 +32,11 @@ if __name__ == '__main__':
     luciano.sobrenome = 'Ramalho'
     del luciano.filhos
     luciano.olhos = 1   # neste caso, entra no __dict__
+    Pessoa.olhos = 3
     print(luciano.__dict__)
     print(renzo.__dict__)
     print(Pessoa.olhos)
     print(luciano.olhos)
     print(id(Pessoa.olhos), id(luciano.olhos))
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
